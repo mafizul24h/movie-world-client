@@ -72,7 +72,8 @@ const AddMovie = () => {
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                // navigate('/');
+                                event.target.reset();
+                                navigate('/');
                             }
                         })
 
