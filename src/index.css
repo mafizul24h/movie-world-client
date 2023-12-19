@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-primary {
+  @apply bg-gradient-to-r from-cyan-500 to-blue-800 text-white py-3 px-12 rounded-full
+}
+
+.button-primary:hover {
+  @apply bg-gradient-to-r from-blue-800 to-cyan-500
+}
+
+.button-edit {
+  @apply bg-gradient-to-r from-cyan-500 to-blue-800 text-white p-3 rounded-full
+}
+
+.button-edit:hover {
+  @apply bg-gradient-to-r from-blue-800 to-cyan-500
+}
+
+.active {
+  @apply bg-green-800 mx-2 bg-opacity-30 py-3 px-6 rounded-2xl
+}
+
+.default {
+  @apply py-3 px-6 rounded-2xl
+}
+
+.default:hover {
+  @apply bg-gray-500
+}
+
+
+.banner-img {
+  background-image: url('./assets/banner/jawaan-banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
