@@ -54,25 +54,25 @@ const AddMovie = () => {
                         description,
                         watch: false,
                     }
-                    // fetch('localhsot', {
-                    //     method: "POST",
-                    //     headers: {
-                    //         'content-type': 'application/json'
-                    //     },
-                    //     body: JSON.stringify(newMovie)
-                    // })
-                    //     .then(res => res.json())
-                    //     .then(data => {
-                    //         // console.log(data.data);
-                    //         Swal.fire({
-                    //             position: 'center',
-                    //             icon: 'success',
-                    //             title: 'Your added class successfully',
-                    //             showConfirmButton: false,
-                    //             timer: 1500
-                    //         })
-                    //         // navigate('/dashboard/myClasss');
-                    //     })
+                    fetch('http://localhost:5000/', {
+                        method: "POST",
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(newMovie)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data.data);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Movie Added successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            navigate('/');
+                        })
 
                     console.log(newMovie);
                 }
