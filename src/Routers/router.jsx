@@ -5,6 +5,7 @@ import Home from '../components/Home/Home/Home';
 import Login from '../components/Login/Login';
 import Register from '../components/Login/Register';
 import AddMovie from '../components/Home/AddVideo/AddMovie';
+import EditMovie from '../components/Home/AddVideo/EditMovie';
 
 const router = createBrowserRouter([
     {
@@ -16,16 +17,21 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/add-movie',
+                path: 'add-movie',
                 element: <AddMovie />
             },
             {
-                path: '/login',
+                path: 'edit-movie/:id',
+                element: <EditMovie />,
+                loader: ({ params }) => fetch(`http://localhost:5000/mymovies/${params.id}`)
+            },
+            {
+                path: 'login',
                 element: <Login />
             },
             {
-                path: '/register',
-                element: <Register/>
+                path: 'register',
+                element: <Register />
             }
         ]
     }

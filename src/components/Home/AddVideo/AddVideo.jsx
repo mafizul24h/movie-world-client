@@ -1,7 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-
-import movie1 from './../../../assets/images/movie-1.jpg'
-import movie2 from './../../../assets/images/movie-2.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
@@ -57,7 +54,9 @@ const AddVideo = () => {
                     {user && <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
                         {movies?.slice(0, 2).map(movie => <div key={movie._id}>
                             <img className='md:h-96 md:w-72 relative mx-auto rounded-md' src={movie.poster} alt="" />
-                            <button className='button-edit absolute -mt-96 ml-12'>Edit Movie</button>
+                            <Link to={`/edit-movie/${movie._id}`}>
+                                <button className='button-edit absolute -mt-96 ml-12'>Edit Movie</button>
+                            </Link>
                             <button onClick={() => handleDelete(movie._id)} className='btn btn-error absolute -mt-96 ml-48'>Delete</button>
                         </div>)}
                     </div>}
