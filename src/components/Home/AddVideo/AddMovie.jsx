@@ -22,7 +22,7 @@ const AddMovie = () => {
         const episode = event.target.episode.value;
         const video = event.target.video.value;
         const photo = event.target.photo.value;
-        const raing = event.target.raing.value;
+        const rating = event.target.rating.value;
         const trailer = event.target.trailer.value;
         const movie = event.target.movie.value;
         const description = event.target.description.value;
@@ -45,16 +45,16 @@ const AddMovie = () => {
                         poster,
                         email,
                         movieName,
-                        episode,
-                        video,
-                        photo,
-                        raing,
+                        episode: parseInt(episode),
+                        video: parseInt(video),
+                        photo: parseInt(photo),
+                        rating: parseFloat(rating),
                         trailer,
                         movie,
                         description,
                         watch: false,
                     }
-                    fetch('http://localhost:5000/', {
+                    fetch('http://localhost:5000/movies', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'
@@ -63,15 +63,17 @@ const AddMovie = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
-                            console.log(data.data);
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: 'Movie Added successfully',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                            navigate('/');
+                            console.log(data);
+                            if (data.insertedId) {
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: 'Movie Added successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                // navigate('/');
+                            }
                         })
 
                     console.log(newMovie);
@@ -148,16 +150,16 @@ const AddMovie = () => {
                                 <label className="label">
                                     <span className="label-text font-bold">Rating</span>
                                 </label>
-                                <input name='raing' type="text" placeholder="Rating" className="input input-bordered" required />
+                                <input name='rating' type="text" placeholder="Rating" className="input input-bordered" required />
                             </div>
                         </div>
 
                         <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Movie Description</span>
-                                </label>
-                                <textarea name="description" id="" cols="30" rows="10" placeholder="Movie Descriptin" className="input input-bordered" required ></textarea>
-                            </div>
+                            <label className="label">
+                                <span className="label-text font-bold">Movie Description</span>
+                            </label>
+                            <textarea name="description" id="" cols="30" rows="10" placeholder="Movie Descriptin" className="input input-bordered" required ></textarea>
+                        </div>
 
                         <div className="form-control">
                             <label className="label">
