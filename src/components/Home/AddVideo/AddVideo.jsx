@@ -11,7 +11,7 @@ const AddVideo = () => {
         fetch(`http://localhost:5000/mymovies?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMovies(data))
-    }, [])
+    }, [user])
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -53,7 +53,7 @@ const AddVideo = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center items-center'>
                     {user && <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
                         {movies?.slice(0, 2).map(movie => <div key={movie._id}>
-                            <img className='md:h-96 md:w-72 relative mx-auto rounded-md' src={movie.poster} alt="" />
+                            <img className='h-96 w-80 md:w-72 relative mx-auto rounded-md' src={movie.poster} alt="" />
                             <Link to={`/edit-movie/${movie._id}`}>
                                 <button className='button-edit absolute -mt-96 ml-12'>Edit Movie</button>
                             </Link>

@@ -14,7 +14,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <div className="banner-img h-[100vh] px-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center pb-16">
+        <div className="banner-img h-[100vh] px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center pb-16">
             <div className='pt-16'>
                 <h1 className='text-4xl md:text-6xl font-bold text-sky-600'>BEST WAY OF ENTERTAINMENT</h1>
                 <p className='text-2xl font=bold text-gray-100 font-bold mt-6'>MOVIES AS YOU DEMAND AT USD</p>
@@ -25,7 +25,7 @@ const Banner = () => {
                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                         {movies.map(singleMovie => <SwiperSlide>
                             {/* <img className='h-3/4 rounded-md md:h-96 md:w-1/2 mx-auto ' src={singleMovie.movie} alt={singleMovie.name} /> */}
-                            <iframe width="100%" height="480" src={singleMovie.movie} title={singleMovie.name} frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe>
+                            <iframe width="100%" height="350" src={singleMovie.movie} title={singleMovie.name} frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe>
                         </SwiperSlide>)}
                     </Swiper>
                 </>
