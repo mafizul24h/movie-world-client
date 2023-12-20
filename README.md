@@ -1,9 +1,18 @@
-# React + Vite
+# Movie World
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+- [@Movie World Live Website Link](https://movideworld.web.app/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# movie-world-client" 
+- [@Movie World Client Site Code Link](https://github.com/mafizul24h/movie-world-client.git) 
+
+- [@Movie World Client Site Code Link](https://github.com/mafizul24h/movie-world-server.git) 
+
+find Your Watch List & Add Videos Data .
+
+please login the following user id and password:-
+
+User Email: john@tecbsl.com 
+
+User Password: 123456
+
+If you add movie please give embed code like: https://www.youtube.com/embed/lV1OOlGwExM
