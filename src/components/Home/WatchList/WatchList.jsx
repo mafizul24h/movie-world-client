@@ -52,11 +52,11 @@ const WatchList = () => {
                                         <div>
                                             <button className='flex items-center gap-3 btn-custom'><FaCheck /><span>Watch List</span></button>
                                         </div>
-                                        <div className='cursor-pointer' onClick={() => setWatchMovie(singleMovie)}>
-                                            <div className='text-gray-100 flex items-center gap-2' onClick={() => document.getElementById('my_modal_3').showModal()}>
+                                        <div onClick={() => document.getElementById('my_modal_3').showModal()} className='cursor-pointer'>
+                                            <button className='text-gray-100 flex items-center gap-2' onClick={() => setWatchMovie(singleMovie)}>
                                                 <FaPlayCircle />
                                                 <p className='uppercase'>Trailer</p>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -88,11 +88,11 @@ const WatchList = () => {
                                         <div>
                                             <button className='flex items-center gap-3 text-white px-6 py-3 rounded-3xl bg-gradient-to-r from-sky-500 to-blue-800 transition-all hober:bg-gradient-to-r hover:from-blue-900 hover:to-sky-500'><FaCheck /><span>Watch List</span></button>
                                         </div>
-                                        <div className='cursor-pointer' onClick={() => setWatchMovie(singleMovie)}>
-                                            <div className='text-gray-100 flex items-center gap-2' onClick={() => document.getElementById('my_modal_3').showModal()}>
+                                        <div onClick={() => document.getElementById('my_modal_3').showModal()} className='cursor-pointer'>
+                                            <button className='text-gray-100 flex items-center gap-2' onClick={() => setWatchMovie(singleMovie)}>
                                                 <FaPlayCircle />
                                                 <p className='uppercase'>Trailer</p>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

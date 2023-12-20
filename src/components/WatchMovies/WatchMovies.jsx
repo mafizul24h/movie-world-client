@@ -6,7 +6,7 @@ const WatchMovies = () => {
     const { user, reload, setReload } = useContext(AuthContext);
     const [movies, setMovies] = useState([]);
     const [watchMovie, setWatchMovie] = useState({});
-    console.log(movies);
+    // console.log(movies);
     useEffect(() => {
         fetch('https://movie-world-server.vercel.app/movies')
             .then(res => res.json())
