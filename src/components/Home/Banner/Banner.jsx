@@ -8,10 +8,12 @@ const Banner = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/movies')
+        fetch('https://movie-world-server.vercel.app/movies')
             .then(res => res.json())
             .then(data => setMovies(data))
     }, [])
+
+    // console.log(movies);
 
     return (
         <div className="banner-img h-[100vh] px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center pb-16">
@@ -28,7 +30,7 @@ const Banner = () => {
                         </SwiperSlide>)}
                     </Swiper>
                 </>
-                <button className='button-primary absolute -ml-20 -mt-6 z-20'>Watch Now</button>
+                <button className='button-primary absolute -ml-20 -mt-6 z-20' >Watch Now</button>
             </div>
         </div>
     );

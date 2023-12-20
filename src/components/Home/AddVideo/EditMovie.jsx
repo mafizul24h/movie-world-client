@@ -56,7 +56,7 @@ const EditMovie = () => {
                         description,
                         watch: false,
                     }
-                    fetch(`http://localhost:5000/mymovies/${_id}`, {
+                    fetch(`https://movie-world-server.vercel.app/mymovies/${_id}`, {
                         method: "PATCH",
                         headers: {
                             'content-type': 'application/json'

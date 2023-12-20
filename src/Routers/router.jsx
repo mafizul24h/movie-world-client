@@ -7,11 +7,13 @@ import Register from '../components/Login/Register';
 import AddMovie from '../components/Home/AddVideo/AddMovie';
 import EditMovie from '../components/Home/AddVideo/EditMovie';
 import DetailsMovie from '../components/DetailsMovie/DetailsMovie';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: 'details/:id',
                 element: <DetailsMovie />,
-                loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({ params }) => fetch(`https://movie-world-server.vercel.app/movies/${params.id}`)
             },
             {
                 path: 'add-movie',
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: 'edit-movie/:id',
                 element: <EditMovie />,
-                loader: ({ params }) => fetch(`http://localhost:5000/mymovies/${params.id}`)
+                loader: ({ params }) => fetch(`https://movie-world-server.vercel.app/mymovies/${params.id}`)
             },
             {
                 path: 'login',

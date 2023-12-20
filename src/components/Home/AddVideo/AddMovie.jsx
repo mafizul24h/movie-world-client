@@ -54,7 +54,7 @@ const AddMovie = () => {
                         description,
                         watch: false,
                     }
-                    fetch('http://localhost:5000/movies', {
+                    fetch('https://movie-world-server.vercel.app/movies', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'
