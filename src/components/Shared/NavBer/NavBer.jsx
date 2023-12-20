@@ -19,7 +19,7 @@ const NavBer = () => {
         <>
             <NavLink to='/' className={({ isActive }) => (isActive ? "active" : "default")} >Get Pro</NavLink>
             <NavLink to='/movies' className={({ isActive }) => (isActive ? "active" : "default")} >Movies</NavLink>
-            <NavLink to='/' className={({ isActive }) => (isActive ? "active" : "default")} >Watch-List</NavLink>
+            <NavLink to='/watch-movies' className={({ isActive }) => (isActive ? "active" : "default")} >Watch-List</NavLink>
             {
                 user ? <button onClick={handleLogOut}>Logut</button> : <NavLink className={({ isActive }) => (isActive ? "active" : "default")} to="/login">Login</NavLink>
             }

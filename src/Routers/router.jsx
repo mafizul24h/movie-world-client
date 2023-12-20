@@ -9,6 +9,7 @@ import EditMovie from '../components/Home/AddVideo/EditMovie';
 import DetailsMovie from '../components/DetailsMovie/DetailsMovie';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import Movies from '../components/Movies/Movies';
+import WatchMovies from '../components/WatchMovies/WatchMovies';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: 'movies',
                 element: <Movies />
+            },
+            {
+                path: 'watch-movies',
+                element: <WatchMovies />
             },
             {
                 path: 'add-movie',
