@@ -81,7 +81,7 @@ const MovieRate = () => {
                                             <FaStar className='text-orange-500' /> <span className='text-gray-100'>{singleMovie.rating}</span>
                                         </div>
                                         <div>
-                                            <button onClick={() => handleWatch(singleMovie)} className='flex items-center gap-3 text-white px-6 py-3 rounded-3xl bg-gradient-to-r from-sky-500 to-blue-800 transition-all hober:bg-gradient-to-r hover:from-blue-900 hover:to-sky-500'>{singleMovie.watchUser === user?.email && singleMovie.status === 'watched' ? <FaCheck className='text-gray-100' /> : <FaPlus className='text-gray-100' />}<span>Watch List</span></button>
+                                            <button onClick={() => handleWatch(singleMovie)} className='flex items-center gap-3 btn-custom'>{singleMovie.watchUser === user?.email && singleMovie.status === 'watched' ? <FaCheck className='text-gray-100' /> : <FaPlus className='text-gray-100' />}<span>Watch List</span></button>
                                         </div>
                                         <div className='cursor-pointer' onClick={() => setWatchMovie(singleMovie)}>
                                             <div className='text-gray-100 flex items-center gap-2' onClick={() => document.getElementById('my_modal_3').showModal()}>

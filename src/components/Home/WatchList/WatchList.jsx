@@ -28,7 +28,7 @@ const WatchList = () => {
         <>
             <div className='p-12 mt-12 bg-black bg-opacity-40'>
                 <h1 className='text-4xl font-bold uppercase text-orange-500'>Your <span className='text-blue-500'>Watch List</span></h1>
-                <div className='my-12 hidden lg:block'>
+                <div className='my-12 hidden md:block'>
                     <Swiper
                         slidesPerView={5}
                         spaceBetween={30}
@@ -50,7 +50,7 @@ const WatchList = () => {
                                             <FaStar className='text-orange-500' /> <span className='text-gray-100'>{singleMovie.rating}</span>
                                         </div>
                                         <div>
-                                            <button className='flex items-center gap-3 text-white px-6 py-3 rounded-3xl bg-gradient-to-r from-sky-500 to-blue-800 transition-all hober:bg-gradient-to-r hover:from-blue-900 hover:to-sky-500'><FaCheck /><span>Watch List</span></button>
+                                            <button className='flex items-center gap-3 btn-custom'><FaCheck /><span>Watch List</span></button>
                                         </div>
                                         <div className='cursor-pointer' onClick={() => setWatchMovie(singleMovie)}>
                                             <div className='text-gray-100 flex items-center gap-2' onClick={() => document.getElementById('my_modal_3').showModal()}>
@@ -64,7 +64,7 @@ const WatchList = () => {
                         }
                     </Swiper>
                 </div>
-                <div className='my-12 lg:hidden'>
+                <div className='my-12 md:hidden'>
                     <Swiper
                         slidesPerView={2}
                         spaceBetween={30}

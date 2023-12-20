@@ -8,6 +8,7 @@ import AddMovie from '../components/Home/AddVideo/AddMovie';
 import EditMovie from '../components/Home/AddVideo/EditMovie';
 import DetailsMovie from '../components/DetailsMovie/DetailsMovie';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
+import Movies from '../components/Movies/Movies';
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path: 'details/:id',
                 element: <DetailsMovie />,
                 loader: ({ params }) => fetch(`https://movie-world-server.vercel.app/movies/${params.id}`)
+            },
+            {
+                path: 'movies',
+                element: <Movies />
             },
             {
                 path: 'add-movie',
