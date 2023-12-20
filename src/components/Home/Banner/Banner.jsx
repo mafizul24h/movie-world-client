@@ -24,7 +24,6 @@ const Banner = () => {
                 <>
                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                         {movies.map(singleMovie => <SwiperSlide>
-                            {/* <img className='h-3/4 rounded-md md:h-96 md:w-1/2 mx-auto ' src={singleMovie.movie} alt={singleMovie.name} /> */}
                             <iframe width="100%" height="350" src={singleMovie.movie} title={singleMovie.name} frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe>
                         </SwiperSlide>)}
                     </Swiper>
