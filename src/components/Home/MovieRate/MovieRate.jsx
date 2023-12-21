@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { FaCheck, FaPlayCircle, FaPlus, FaStar } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import Modal from '../../Modal/Modal';
@@ -13,6 +13,7 @@ const MovieRate = () => {
     const { user, reload, setReload } = useContext(AuthContext);
     const [movies, setMovies] = useState([]);
     const [watchMovie, setWatchMovie] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://movie-world-server.vercel.app/movies')
@@ -22,6 +23,23 @@ const MovieRate = () => {
     }, [reload])
 
     const handleWatch = (singleMovie) => {
+        if (!user) {
+            Swal.fire({
+                title: "Are you sure watch Movie?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Please Login!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login');
+                    return;
+                }
+            });
+            return;
+        }
         // console.log(id);
         if (singleMovie.watchUser === user?.email && singleMovie.status === 'watched') {
             return (
