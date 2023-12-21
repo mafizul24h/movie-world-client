@@ -10,6 +10,7 @@ import DetailsMovie from '../components/DetailsMovie/DetailsMovie';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import Movies from '../components/Movies/Movies';
 import WatchMovies from '../components/WatchMovies/WatchMovies';
+import PrivateProvider from '../Providers/PrivateProvider';
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'add-movie',
-                element: <AddMovie />
+                element: <PrivateProvider><AddMovie /></PrivateProvider>
             },
             {
                 path: 'edit-movie/:id',

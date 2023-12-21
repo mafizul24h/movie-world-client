@@ -77,7 +77,7 @@ const AddMovie = () => {
                             }
                         })
 
-                    console.log(newMovie);
+                    // console.log(newMovie);
                 }
             })
 
