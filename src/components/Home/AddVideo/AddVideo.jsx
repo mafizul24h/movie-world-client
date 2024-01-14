@@ -64,7 +64,6 @@ const AddVideo = () => {
     //             }
     //         });
     //     }
-    //     navigate('/add-movie')
     // }
 
     return (
